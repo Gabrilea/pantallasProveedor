@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="success">
+  <ion-row>
+  <ion-col></ion-col> 
+  <ion-col>
+  <img  id="imagen" src="../../assets/imagenes/carro.png " alt="">
+  </ion-col>
+  <ion-col></ion-col>
+  </ion-row>
+  <ion-buttons slot="start">
+  <ion-back-button defaultHref="/ingresa-estable">
+  </ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+<ion-content>
+ 
+  <img src="../../../assets/imagenes/Recurso 15.png"  class="icon6">
+  <img src="../../../assets/imagenes/Recurso 14.png"  class="icon6">
+  <img src="../../../assets/imagenes/Recurso 9.png"  class="icon6">
+
+<br>
+    <br>
+  <ion-label class="texto"><h2><strong>REGISTRA TU PRODUCTO</strong></h2></ion-label>
+  <br>
+  
+  <ion-label><h3 class="ion-padding-start" style="color: darkgrey;">*campos oligatorios</h3></ion-label>
+  <ion-row class="ion-padding-start">
+    <ion-col>
+    <br><br><br>
+    <ion-row>
+    <ion-label>*Nombre producto</ion-label>
+    </ion-row>
+    <ion-row id="seis">
+      <ion-input class="cinco" [(ngModel)]="nombre"></ion-input>
+    </ion-row>
+    </ion-col>
+
+    <ion-col>
+     <ion-card class="p">
+        <ion-card-content>
+          
+          <ion-icon name="camera" color="dark" ></ion-icon>
+          <ion-input type="file" class="archivo" [(ngModel)]="foto"></ion-input>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+    <ion-row class="ion-padding-start"><ion-label>*Descripción:</ion-label></ion-row>
+  <ion-row class="ion-padding-start" id="dos">
+    <ion-input class="uno" [(ngModel)]="descripcion"></ion-input>
+  </ion-row>
+
+  <br>
+
+  <ion-row><ion-label><h3 class="ion-padding-start">*Unidad de medida/presentación:</h3></ion-label></ion-row>
+  <ion-row class="ion-padding-start" id="dos">
+    <ion-input class="uno" [(ngModel)]="unidad"></ion-input>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-row class="ion-padding-start"><ion-label>Precio:</ion-label></ion-row>
+      <ion-row class="ion-padding-start" id="pe">
+        <ion-input class="ep" [(ngModel)]="precio"></ion-input>
+      </ion-row>
+    </ion-col>
+    <ion-col>
+      <ion-row class="ion-padding-start"><ion-label>En existencia:</ion-label></ion-row>
+      <ion-row class="ion-padding-start" id="pe">
+        <ion-input class="ep" [(ngModel)]="existencia"></ion-input>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+    <br>
+  <ion-label><h3 class="ion-padding-start">*Descuento o promoción:</h3></ion-label>
+  <ion-row class="ion-padding-start" id="dos">
+    <ion-input class="uno" [(ngModel)]="descuento"></ion-input>
+  </ion-row>
+   <br>
+
+   
+    <ion-row></ion-row>
+
+   <ion-row class="ion-padding-start" id="dos">
+    <ion-select  class="perro" placeholder="categoría">
+      <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>  
+   </ion-row>
+
+
+   
+
+    <br>
+   <ion-row></ion-row>
+   <ion-row class="ion-padding-start" id="dos">
+    <ion-select  class="perro" placeholder="subcategoría">
+      <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>  
+   </ion-row>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col></ion-col>
+    <ion-col><ion-button (click)="presentAlert()" color="light">SIGUIENTE</ion-button></ion-col>
+  </ion-row>
+
+</ion-content>

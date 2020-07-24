@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class IngresaProductosPage implements OnInit {
   nombre:string;
-  foto:File;
+  archivo:File;
   descripcion:string;
   unidad:number;
   precio:number;
@@ -34,7 +34,7 @@ export class IngresaProductosPage implements OnInit {
       }
     }]
    }).then(alert=> alert.present());
-   console.log(this.nombre, this.foto, this.descripcion, this.unidad, this.precio, this.existencia, this.descuento);
+   console.log(this.nombre, this.archivo, this.descripcion, this.unidad, this.precio, this.existencia, this.descuento);
    
 }
 
@@ -49,8 +49,21 @@ async presentLoading(message:string){
 ionViewWillLeave(){
   this.presentLoading('Espere');
 }
-  
 
+img1:any;
 
+  fileChange(event){
+    if(event.target.files && event.target.files[0]){
+      let reader = new FileReader();
+
+      reader.onload = (event:any) => {
+        this.img1 = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+      let fileList: FileList = event.target.files;  
+      let file: File = fileList[0];
+      console.log(file);
+  }
 
 }

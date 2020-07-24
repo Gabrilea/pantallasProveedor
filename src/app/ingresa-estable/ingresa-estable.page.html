@@ -22,27 +22,25 @@
   <br>
   
   <ion-label><h3 class="ion-padding-start" style="color: darkgrey;">*campos oligatorios</h3></ion-label>
-  <ion-row class="ion-padding-start">
-    <ion-col>
-      <br><br><br>
-      <ion-row>
-      <ion-label>*Nombre del Establecimiento</ion-label>
-      </ion-row>
-      <ion-row id="seis">
-        <ion-input class="cinco" [(ngModel)]="nombre"></ion-input>
-      </ion-row>
-      </ion-col>
-  
-      <ion-col>
-       <ion-card class="p">
-          <ion-card-content>
-            <ion-icon name="camera" color="dark" ></ion-icon>
-            <ion-input type="file" class="archivo" [(ngModel)]="archivo"></ion-input>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-      <br>
+     
+       <div style=" display: flex; align-items: center; justify-content: center;">
+      <ion-card class="p">
+         <ion-card-content>  
+           <img *ngIf="img1" [src]="img1" >
+           <label for="file-upload" class="subir">
+            <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+            <ion-icon name="camera" color="white" ></ion-icon>
+        </label>
+        <input id="file-upload" (change)="fileChange($event)" type="file" style='display: none;'   [(ngModel)]="archivo"/>
+         </ion-card-content>
+       </ion-card>
+       </div>
+    
+
+      <ion-row class="ion-padding-start"><ion-label>*Nombre del establecimiento:</ion-label></ion-row>
+  <ion-row class="ion-padding-start" id="dos">
+    <ion-input class="uno" [(ngModel)]="nombre"></ion-input>
+</ion-row>
 
     <ion-row class="ion-padding-start"><ion-label>*Giro:</ion-label></ion-row>
   <ion-row class="ion-padding-start" id="dos">

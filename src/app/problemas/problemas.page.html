@@ -47,15 +47,14 @@
       <br>
       <ion-buttons>
           <ion-button>
-              TOMAR FOTO
-              <ion-icon color="success" button-clear slot="start" name="camera"></ion-icon>
-          </ion-button>
-          <ion-button>
-              SUBIR DE GALERIA
-              <ion-icon slot="end" name="images"></ion-icon>
+            <label for="file-upload" class="subir">
+             <i class="fas fa-cloud-upload-alt"></i> SUBIR DE GALERIA
+             <ion-icon slot="end" name="images"></ion-icon>
+         </label>
+         <input id="file-upload" (change)="fileChange($event)" type="file" style='display: none;' > 
           </ion-button>
       </ion-buttons>
-      <!-- <img [src]="image" *ngIf="image"> -->
+      <img *ngIf="img1" [src]="img1" >
   </ion-list>
   <br>
   <br>

@@ -9,6 +9,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class OlvideContraPage implements OnInit {
 
+contra:string;
+
   constructor(private alertCtrl: AlertController) { }
 
   async presentAlert(){
@@ -22,9 +24,16 @@ export class OlvideContraPage implements OnInit {
         }
       }]
      }).then(alert=> alert.present());
+
+     console.log(this.contra);
   }
 
   ngOnInit() {
   }
+
+  
+    
+    
+  
 
 }

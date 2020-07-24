@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {LoadingController} from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./ingresa-estable.page.scss'],
 })
 export class IngresaEstablePage implements OnInit {
+
+  list:any;
+  text:string;
 
   locationWatchStarted:boolean;
   locationSubscription:any;
@@ -22,7 +26,9 @@ export class IngresaEstablePage implements OnInit {
   comprobante1:File;
   comprobante2:File;
 
-  constructor(private geolocation: Geolocation, private loadingCtrl:LoadingController) { }
+  constructor(private geolocation: Geolocation, private loadingCtrl:LoadingController, private camera:Camera) { }
+
+  file:File;
 
   ngOnInit() {
   }
@@ -58,18 +64,29 @@ export class IngresaEstablePage implements OnInit {
 
 
   }
-
-  
-
-  
-  
-  
+ 
 
   vervalue(){
    
     console.log(this.nombre, this.archivo, this.giro, this.direccion, this.comprobante1, this,this.comprobante2);
     
   }
+  img1:any;
+
+  fileChange(event){
+    if(event.target.files && event.target.files[0]){
+      let reader = new FileReader();
+
+      reader.onload = (event:any) => {
+        this.img1 = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+      let fileList: FileList = event.target.files;  
+      let file: File = fileList[0];
+      console.log(file);
+  }
+        
   
   
 

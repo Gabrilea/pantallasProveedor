@@ -44,25 +44,25 @@ ionViewWillLeave(){
   this.presentLoading('Espere');
 }
 
-vervalue(){
-  // console.log(this.usuario, this.contra);
+// vervalue(){
+//   // console.log(this.usuario, this.contra);
  
-  var contador='a';
+//   var contador='a';
   
   
-  if(perrito =='b'){
-    var perrito=localStorage.getItem('valor');
-    location.href="proveedor/home";
-    console.log('hola amigos jiiji');
+//   if(perrito =='b'){
+//     var perrito=localStorage.getItem('valor');
+//     location.href="proveedor/home";
+//     console.log('hola amigos jiiji');
     
-  }
-  else if(contador=='a'){
-    contador='b';
-    var perro=localStorage.setItem('valor', contador);
+//   }
+//   else if(contador=='a'){
+//     contador='b';
+//     var perro=localStorage.setItem('valor', contador);
     
-    location.href="ingresa-estable";
-  }
-  console.log(perrito);  
-}
+//     location.href="ingresa-estable";
+//   }
+//   console.log(perrito);  
+// }
 
 }

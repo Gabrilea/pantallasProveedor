@@ -12,9 +12,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class IngresaEstablePage implements OnInit {
 
-  list:any;
-  text:string;
-
+  
   locationWatchStarted:boolean;
   locationSubscription:any;
   locationTrace=[];

@@ -28,7 +28,7 @@
          <ion-card-content>  
            <img *ngIf="img1" [src]="img1" >
            <label for="file-upload" class="subir">
-            <i class="fas fa-cloud-upload-alt"></i> Subir archivo
+            <i class="fas fa-cloud-upload-alt"></i> Subir imagen  del establecimiento
             <ion-icon name="camera" color="white" ></ion-icon>
         </label>
         <input id="file-upload" (change)="fileChange($event)" type="file" style='display: none;'   [(ngModel)]="archivo"/>

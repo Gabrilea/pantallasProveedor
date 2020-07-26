@@ -45,6 +45,7 @@
           <ion-label style="color: dimgray;">Evidencia</ion-label>
       </ion-row>
       <br>
+      <div style=" display: flex; align-items: center; justify-content: center;">
       <ion-buttons>
           <ion-button>
             <label for="file-upload" class="subir">
@@ -54,6 +55,7 @@
          <input id="file-upload" (change)="fileChange($event)" type="file" style='display: none;' > 
           </ion-button>
       </ion-buttons>
+    </div>
       <img *ngIf="img1" [src]="img1" >
   </ion-list>
   <br>
